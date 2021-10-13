@@ -1,0 +1,33 @@
+<mat-label style="color: black;font-size: 20px;">Selected Event Name: {{  selected_alert}}</mat-label><br>
+<mat-label style="color: black;font-size: 20px;">Selected Event Count: {{selected_alert_count}} </mat-label>
+  
+
+<table mat-table [dataSource]="particularareaDetailFilter" class="mat-elevation-z8" style="width: 1000px;color: black;">
+  
+  <!-- AreaDescr Column -->
+  <ng-container matColumnDef="areaDesc">
+    <th mat-header-cell *matHeaderCellDef style="text-align: center; color: black;size: 1px;"> AreaDescr. </th>
+    <td *matCellDef="let i">{{i.properties.areaDesc}}</td>
+  </ng-container>
+
+  <!-- AffectedZone Column -->
+  <ng-container matColumnDef="affectedZones">
+    <th mat-header-cell *matHeaderCellDef style="text-align: center; color: black;size: 1px;"> AffectedZone</th>
+    <td *matCellDef="let i">{{i.properties.affectedZones}}</td>
+  </ng-container>
+
+  <!-- Event Column 
+  <ng-container matColumnDef="event">
+    <th mat-header-cell *matHeaderCellDef style="text-align: center; color: black;size: 1px;">Event</th>
+    <td *matCellDef="let i">{{i.properties.event}}</td>
+  </ng-container>
+-->
+  <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+  <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+ </table>
+
+<div *ngIf="isLoading" 
+  style="display: flex; justify-content: center; align-items: center; background: white;">
+  <mat-progress-spinner color="primary" mode="indeterminate">
+  </mat-progress-spinner>
+</div>

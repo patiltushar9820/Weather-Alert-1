@@ -1,0 +1,22 @@
+<!-- alert types-->
+<br>
+<mat-form-field style="padding-left: 40px;width: 50em;" appearance="fill">
+  <mat-label style="color: black;"><h5>Select Alert Types:</h5></mat-label>
+  <mat-select (selectionChange)="onEventSelector($event)" >
+    <mat-option *ngFor="let item of alertTypes" [value]="item.name">{{item.name}}</mat-option>
+  </mat-select>
+</mat-form-field>
+
+<!-- areas button-->
+  <br> 
+  <h5 style="color: black;box-sizing: 5px;">Select Area :</h5>
+  <mat-grid-list cols = "8" rowHeight = "50px" >
+    
+    <mat-grid-tile *ngFor="let item of area">
+    <button mat-stroked-button style="color: black;box-sizing: 5px;"  (click)="onItemSelector(item)">{{item}}</button>
+  </mat-grid-tile>
+  </mat-grid-list>
+
+
+
+  
