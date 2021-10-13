@@ -14,6 +14,7 @@ import { ParticularAreaServiceService } from './core/services/particular-area-se
 import { RouterModule } from '@angular/router';
 import { SelectalertComponent } from './selectalert/selectalert.component';
 
+//import modules
 import {MatButtonModule} from '@angular/material/button';
 import { MatFormFieldModule, MatGridListModule, MatInputModule, MatProgressSpinnerModule, MatSelectModule} from '@angular/material'
 import {MatTableModule} from '@angular/material/table';
